@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+    _*STANDUP 2019-${1:month}${2:day}*_
+
+    ```
+    ILDI -
+    JENO -
+    ANDRIS -
+    TOMI -
+    ZSUZSI -
+    PETI -
+    ```
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>su</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

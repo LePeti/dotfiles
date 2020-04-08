@@ -1,0 +1,13 @@
+{
+	"prog": "iterm",
+	"python":
+	{
+		"bracketed_paste_mode": true,
+		"prog": "iterm"
+	},
+	"r":
+	{
+		"bracketed_paste_mode": false,
+		"prog": "rstudio"
+	}
+}

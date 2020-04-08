@@ -1,0 +1,7 @@
+{
+    "pep8_ignore":
+        [
+            "E501"
+        ],
+    "anaconda_linting_behaviour": "save-only"
+}

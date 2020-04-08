@@ -1,0 +1,57 @@
+### Terminal commands
+
+## Delete/find files/folders:
+    find /srv/shiny-server/replenishment/releases -name "201711*"
+    find /srv/shiny-server/replenishment/releases -name "201711*" -print0 | xargs -0 rm -rf
+    find /srv/shiny-server/replenishment/releases -name "201711*" -delete
+
+## Find text in files
+    grep -rnw '/path/to/somewhere/' -e 'pattern'
+
+## List files with their sizes:
+    du -sh /srv/shiny-server/*
+
+## cat the most recent file (e.g. in shiny logs)
+    cat "$(ls -rt | tail -1)"
+
+## Convert ; delimited CSV to , delimiter
+    cat semicolon_delimited.csv | tr ";" "," > comma_delimited.csv
+
+## Print the number of rows in a CSV
+    wc -l my_commaseparated_file.csv
+    cat commaseparated_file.csv | wc -l (faster version in case needed to use multiple times)
+
+## Search as you type and cycle through results:
+    Ctrl + R
+
+### Query hds from terminal (etl01)
+    ssh etl01
+    psql -U bigdata_ro -p 5432 -h 10.22.0.201 hds
+    (provide password from db_config.yml)
+
+### Query suite from terminal (devmgmt1)
+    ssh devmgmt1
+    database.sh suite0
+
+## ZSH aliases
+    resolve alias by typing (e.g.) `type command-hints`
+    zshconfig
+    ems
+    dbconfig
+    hotkeys
+    copyconfig
+    rstudio
+    crp
+
+## GIT
+    Remove local commits and changes on disk too: `git reset --hard <last good SHA>`
+    Do the above w/o `--hard` to remove commits but keep the changes on disk
+    Undo public change: `git revert <SHA>` create a new commit that removes the previous changes
+    Undo uncommited local changes: git checkout <bad filename>
+    Show log of changes to HEAD: `git reflog`
+
+## Docker
+    docker image ls
+    docker run -it [docker-image-name:base] sh
+    docker ps [-a]
+
