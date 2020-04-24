@@ -29,7 +29,7 @@
 [mergetool]
     prompt = false
 [mergetool "sublimerge"]
-    cmd = sublime -n --wait \"$LOCAL\" \"$MERGED\" \"$REMOTE\" \"$BASE\" --command \"sublimerge_diff_views\"
+    cmd = subl -n --wait \"$LOCAL\" \"$MERGED\" \"$REMOTE\" \"$BASE\" --command \"sublimerge_diff_views\"
     trustExitCode = false
 [diff]
     tool = sublimerge

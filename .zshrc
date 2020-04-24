@@ -1,120 +1,65 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/peterlukacs/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+export ZSH=/Users/plukacs/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
+source $ZSH/oh-my-zsh.sh
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# enable zsh-completions
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+plugins=(
+    zsh-completions
+    docker
+    docker-compose
+)
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# User configuration
+export DEFAULT_USER=`whoami`
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Credentials path for the cli-tool-for-r-proj-skeleton
+export CREDENTIALS_DIR='/Users/plukacs/secret'
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+alias zshconfig="subl ~/.zshrc"
+alias ems="cd /Users/plukacs/emarsys-repos"
+alias dbconfig="subl ~/config/db_config.yml"
+alias hotkeys="subl /Users/plukacs/.hammerspoon/"
+alias copyconfig="open 'smb://BUD01RODC0202/bigdata/data_research/config' && \
+                  sleep 2 && \
+                  cp /Volumes/config/db_config.yml ~/secret/ && \
+                  umount /Volumes/config"
+alias rstudio='/Applications/RStudio.app/Contents/MacOS/RStudio &'
+alias crp='python3 /Users/plukacs/emarsys-repos/cli-tool-for-r-proj-skeleton/r_project_setup.py'
+alias command-hints="cat ~/.command-hints"
+alias csgo="subl '/Users/plukacs/Library/Application Support/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/autoexec.cfg'"
+# alias mouseaccon=defaults write .GlobalPreferences com.apple.mouse.scaling 3
+# alias mouseaccoff="defaults write .GlobalPreferences com.apple.mouse.scaling -1"
+# alias mouseacc="echo $(defaults read .GlobalPreferences com.apple.mouse.scaling)"
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# pyenv
+# pyenv for python version management
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# Virtualenvwrapper
-export WORKON_HOME=$HOME/Envs
-export PROJECT_HOME=$HOME/Documents/repos
-source '/usr/local/bin/virtualenvwrapper.sh'
+# pipenv for python virtualenv management (virtualenvwrapper wrapper)
+export PATH=$PATH:/usr/local/bin/pipenv
 
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+# mongodb
+export PATH="/usr/local/opt/mongodb-community@3.6/bin:$PATH"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# virtualenvwrapper for python virtualenv management
+export VIRTUALENVWRAPPER_PYTHON=$(which python)
+export GPG_TTY=$(tty)
+source /usr/local/bin/virtualenvwrapper.sh
 
-source $ZSH/oh-my-zsh.sh
+export CLOUDSDK_PYTHON=python
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source ~/.dbt-completion.bash
 
-# User configuration
+# copied from ~/.bash_profile
+# eval "$(rbenv init -)"
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
-export MPLBACKEND="module://itermplot"
-export ITERMPLOT=rv
-
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='sublime'
-# else
-#   export EDITOR='sublime'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias hotkeys="subl ~/.hammerspoon/app_hotkeys.lua"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/peterlukacs/Library/Caches/heroku/autocomplete/zsh_setup && \
-    test -f $HEROKU_AC_ZSH_SETUP_PATH && \
-    source $HEROKU_AC_ZSH_SETUP_PATH;
-
-# postgres env var
-export DATABASE_URL=postgres://$(whoami)
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
