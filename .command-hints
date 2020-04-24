@@ -49,6 +49,7 @@
     Undo public change: `git revert <SHA>` create a new commit that removes the previous changes
     Undo uncommited local changes: git checkout <bad filename>
     Show log of changes to HEAD: `git reflog`
+    Show diff from remote: git fetch && get diff master origin/master
 
 ## Docker
     docker image ls
