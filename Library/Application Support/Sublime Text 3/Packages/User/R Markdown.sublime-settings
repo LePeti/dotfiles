@@ -3,6 +3,6 @@
     "word_wrap": true,
     "wrap_width": 80,
     "spell_check": true,
-    "trim_trailing_white_space_on_save": false
-
+    "trim_trailing_white_space_on_save": false,
+    "draw_white_space": "all"
 }
