@@ -53,13 +53,13 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python)
 export GPG_TTY=$(tty)
 source /usr/local/bin/virtualenvwrapper.sh
 
+# Google Cloud SDK
 export CLOUDSDK_PYTHON=python
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-source ~/.dbt-completion.bash
 
-# copied from ~/.bash_profile
-# eval "$(rbenv init -)"
+# dbt
+source ~/.dbt-completion.bash
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
