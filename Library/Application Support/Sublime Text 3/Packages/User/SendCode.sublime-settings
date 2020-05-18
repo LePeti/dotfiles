@@ -1,5 +1,5 @@
 {
-	"prog": "iterm",
+	"prog": "chrome-rstudio",
 	"python":
 	{
 		"bracketed_paste_mode": true,
@@ -8,6 +8,6 @@
 	"r":
 	{
 		"bracketed_paste_mode": false,
-		"prog": "rstudio"
+		"prog": "chrome-rstudio"
 	}
 }
