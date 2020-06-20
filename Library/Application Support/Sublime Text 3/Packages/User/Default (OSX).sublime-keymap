@@ -1,0 +1,15 @@
+[
+    // R
+    // "assignment" operator -- Uses the same shortcut as RStudio
+    { "keys": ["alt+-"], "command": "insert", "args": {"characters": " <- "}},
+
+    // magrittr's "pipe-forward" operator -- same as RStudio
+    { "keys": ["super+shift+m"], "command": "insert", "args": {"characters": " %>% "}},
+
+    // Insert section header (by Almos Tomasovszky)
+    // Python class located under "/Users/peterlukacs/Library/Application Support/Sublime Text 3/Packages/User/r_section_header.py"
+    {"keys": ["ctrl+alt+i"], "command": "insert_header"},
+
+    // Open gitsavvy's status page
+    { "keys": ["ctrl+s"], "command": "gs_show_status" }
+]

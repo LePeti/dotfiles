@@ -11,7 +11,7 @@
 		"Gitlab"
 	],
 	"animation_enabled": true,
-	"close_windows_when_empty": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Agila Theme/Agila Oceanic Next.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
