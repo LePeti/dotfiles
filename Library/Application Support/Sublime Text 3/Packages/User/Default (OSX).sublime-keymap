@@ -1,0 +1,12 @@
+[
+	// "assignment" operator -- Uses the same shortcut as RStudio
+	{ "keys": ["alt+-"], "command": "insert", "args": {"characters": " <- "}},
+
+	// magrittr's "pipe-forward" operator -- same as RStudio
+	{ "keys": ["super+shift+m"], "command": "insert", "args": {"characters": " %>% "}},
+	// Gist updated to reflect RStudio's updated shortcut (no longer "alt+shift+.")
+	// ctrl + space is already taken by mac os
+	{ "keys": ["ctrl+alt+space"], "command": "auto_complete" },
+    { "keys": ["control+s", "control+u"], "command": "insert_sublime_snippet_w_date" },
+    { "keys": ["ctrl+alt+i"], "command": "insert_header" }
+]
