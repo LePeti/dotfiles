@@ -1,12 +1,15 @@
 [
-	// "assignment" operator -- Uses the same shortcut as RStudio
-	{ "keys": ["alt+-"], "command": "insert", "args": {"characters": " <- "}},
+    // R
+    // "assignment" operator -- Uses the same shortcut as RStudio
+    { "keys": ["alt+-"], "command": "insert", "args": {"characters": " <- "}},
 
-	// magrittr's "pipe-forward" operator -- same as RStudio
-	{ "keys": ["super+shift+m"], "command": "insert", "args": {"characters": " %>% "}},
-	// Gist updated to reflect RStudio's updated shortcut (no longer "alt+shift+.")
-	// ctrl + space is already taken by mac os
-	{ "keys": ["ctrl+alt+space"], "command": "auto_complete" },
-    { "keys": ["control+s", "control+u"], "command": "insert_sublime_snippet_w_date" },
-    { "keys": ["ctrl+alt+i"], "command": "insert_header" }
+    // magrittr's "pipe-forward" operator -- same as RStudio
+    { "keys": ["super+shift+m"], "command": "insert", "args": {"characters": " %>% "}},
+
+    // Insert section header (by Almos Tomasovszky)
+    // Python class located under "/Users/peterlukacs/Library/Application Support/Sublime Text 3/Packages/User/r_section_header.py"
+    {"keys": ["ctrl+alt+i"], "command": "insert_header"},
+
+    // Open gitsavvy's status page
+    { "keys": ["ctrl+s"], "command": "gs_show_status" }
 ]
