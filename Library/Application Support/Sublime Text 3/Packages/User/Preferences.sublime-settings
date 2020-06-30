@@ -12,7 +12,7 @@
 	],
 	"animation_enabled": true,
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Agila Theme/Agila Oceanic Next.tmTheme",
+	"color_scheme": "Packages/Agila Theme/Markdown/Dracula Markdown.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
 	[

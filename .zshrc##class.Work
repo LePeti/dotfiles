@@ -4,6 +4,10 @@ export ZSH=/Users/plukacs/.oh-my-zsh
 ZSH_THEME="af-magic"
 source $ZSH/oh-my-zsh.sh
 
+# Set default text editor
+export VISUAL=vi
+export EDITOR="$VISUAL"
+
 # enable zsh-completions
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
