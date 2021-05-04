@@ -1,13 +1,13 @@
-tell application "Google Chrome"
+tell application "Safari"
     repeat with w in (windows)
         set j to 0
         repeat with t in (tabs of w)
             set j to j + 1
-            if title of t = "RStudio" or title of t = "RStudio Sign In" then
+            if title of t = "RStudio" or title of t = "RStudio Sign In" or title of t = "RStudio Server" then
                 set (active tab index of w) to j
                 set index of w to 1
                 delay 0.05
-                do shell script "open -a Google\\ Chrome --args --profile-directory=Profile\\ 2"
+                do shell script "open -a Safari"
                 return
             end if
         end repeat
