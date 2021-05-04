@@ -11,7 +11,7 @@
 		"Gitlab"
 	],
 	"animation_enabled": true,
-	"close_windows_when_empty": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Agila Theme/Markdown/Dracula Markdown.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -20,7 +20,7 @@
 		"*.Rproj.user*"
 	],
 	"font_face": "Cascadia Code",
-	"font_size": 23,
+	"font_size": 22,
 	"ignored_packages":
 	[
 		"Markdown",
@@ -32,6 +32,7 @@
 		"csv",
 		"localhost"
 	],
+	"preview_on_click": false,
 	"rulers":
 	[
 		80
