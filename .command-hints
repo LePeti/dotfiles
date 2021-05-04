@@ -67,6 +67,7 @@
 
 # YADM
     yadm list -a
+    yadm add -u (add all changed files)
 
 # OS information
     cat /etc/os-release
