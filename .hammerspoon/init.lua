@@ -5,15 +5,7 @@ require('window_movements')
 require('app_hotkeys')
 require('open_url')
 require('window_focus')
-require('firefox-setup')
 hs.loadSpoon("PopupTranslateSelection")
-hs.loadSpoon('Emojis')
-
--- Toggling the emoji chooser panel
-
-spoon.Emojis:bindHotkeys({
-    toggle = { {'ctrl', 'alt', 'cmd'}, "h" }
-})
 
 hyper:bind({}, 'h', function()
   hs.eventtap.keyStroke({'cmd','alt','ctrl'}, 'h')

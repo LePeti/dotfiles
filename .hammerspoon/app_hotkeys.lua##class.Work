@@ -4,60 +4,29 @@
 
 local applicationHotkeys = {
   a = "zettlr",
-  b = "BigQuery",
-  -- c = 'Safari',
-  c = 'Firefox-personal',
-  x = 'Firefox-work',
+  c = 'Google Chrome',
   d = '/Applications/fman.app/Contents/MacOS/fman',
-  j = 'Jira',
   o = 'Microsoft Outlook',
   p = 'pomello',
   z = 'zoom.us',
-  -- r = "Rstudio-Safari",
-  -- r = '/Applications/RStudio.app/Contents/MacOS/RStudio',
-  s = 'Visual Studio Code',
-  -- s = 'Sublime Text',
-  -- t = 'iTerm',
-  t = 'translate-selection',
-  v = 'Slack',
+  s = 'VS Code @ FB',
+  t = 'iTerm',
+  x = 'translate-selection',
   y = 'Spotify',
   w = 'trello',
   l = 'Bitwarden',
   r = 'hs-reload',
   e = 'hs-console'
-  -- e = 'Evernote'
-  -- a = 'iTerm',
-  -- g = 'Google Chrome',
-  -- e = 'PyCharm'
-  -- w = 'Microsoft Word',
-  -- x = 'Microsoft Excel',
-  -- i = 'Microsoft Powerpoint'
 }
 
 for key, app in pairs(applicationHotkeys) do
   hyper:bind({}, key, function()
-    if app == "Rstudio-Safari" then
-      -- hs.osascript.applescriptFromFile("open-rstudio-safari.applescript")
-    elseif app == "BigQuery" then
-      -- hs.osascript.applescriptFromFile("bigquery.applescript")
-    elseif app == "hs-reload" then
+    if app == "hs-reload" then
       hs.reload()
     elseif app == "hs-console" then
       hs.toggleConsole()
     elseif app == "translate-selection" then
       spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
-    elseif app == "Firefox-personal" then
-      if not ff_personal then
-        hs.notify.new({title="Firefox", informativeText="Personal profile is not open."}):send()
-      else
-        ff_personal:activate()  -- defined in firefox-setup.lua
-      end
-    elseif app == "Firefox-work" then
-      if not ff_work then
-        hs.notify.new({title="Firefox", informativeText="Work profile is not open."}):send()
-      else
-        ff_work:activate()  -- defined in firefox-setup.lua
-      end
     else
       hs.application.open(app)
     end
