@@ -13,7 +13,9 @@ local applicationHotkeys = {
   t = 'iTerm',
   x = 'translate-selection',
   y = 'Spotify',
-  w = 'trello',
+  w = 'fb-workplace',
+  v = 'fb-calendar',
+  g = 'fb-home',
   l = 'Bitwarden',
   r = 'hs-reload',
   e = 'hs-console'
@@ -27,6 +29,12 @@ for key, app in pairs(applicationHotkeys) do
       hs.toggleConsole()
     elseif app == "translate-selection" then
       spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
+    elseif app == "fb-workplace" then
+      hs.osascript.applescriptFromFile("open-fb-workplace-chrome.applescript")
+    elseif app == "fb-calendar" then
+      hs.osascript.applescriptFromFile("open-fb-calendar-chrome.applescript")
+    elseif app == "fb-home" then
+      hs.osascript.applescriptFromFile("open-fb-home-chrome.applescript")
     else
       hs.application.open(app)
     end

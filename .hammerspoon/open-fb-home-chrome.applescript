@@ -3,7 +3,7 @@ tell application "Google Chrome"
         set j to 0
         repeat with t in (tabs of w)
             set j to j + 1
-            if URL of t contains "console.cloud.google.com/bigquery" then
+            if URL of t = "https://www.internalfb.com/" then
                 set (active tab index of w) to j
                 set index of w to 1
                 delay 0.05
@@ -12,5 +12,5 @@ tell application "Google Chrome"
             end if
         end repeat
     end repeat
-    tell window 1 to open location "https://console.cloud.google.com/bigquery?project=ems-data-playground"
+    tell window 1 to open location "https://www.internalfb.com/"
 end tell
