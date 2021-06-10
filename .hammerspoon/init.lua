@@ -12,14 +12,4 @@ hyper:bind({}, 'h', function()
   hyper.triggered = true
 end)
 
--- spoon.PopupTranslateSelection:bindHotkeys(
---    {
---     translate_to_en = { { "ctrl", "alt", "cmd" }, "e" },
---     translate_to_de = { { "ctrl", "alt", "cmd" }, "d" },
---     translate_to_es = { { "ctrl", "alt", "cmd" }, "s" },
---     translate_de_en = { { "shift", "ctrl", "alt", "cmd" }, "e" },
---     translate_en_de = { { "shift", "ctrl", "alt", "cmd" }, "d" },
---  }
--- )
-
 hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
