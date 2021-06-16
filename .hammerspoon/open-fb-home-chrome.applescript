@@ -3,7 +3,7 @@ tell application "Google Chrome"
         set j to 0
         repeat with t in (tabs of w)
             set j to j + 1
-            if URL of t = "https://www.internalfb.com/" then
+            if URL of t contains "https://www.internalfb.com/" then
                 set (active tab index of w) to j
                 set index of w to 1
                 delay 0.05
