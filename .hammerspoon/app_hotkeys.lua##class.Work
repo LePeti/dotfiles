@@ -15,6 +15,7 @@ local applicationHotkeys = {
   y = 'Spotify',
   w = 'fb-workplace',
   v = 'fb-home',
+  b = 'fb-bento',
   l = 'Bitwarden',
   r = 'hs-reload',
   e = 'hs-console'
@@ -32,6 +33,8 @@ for key, app in pairs(applicationHotkeys) do
       hs.osascript.applescriptFromFile("open-fb-workplace-chrome.applescript")
     elseif app == "fb-home" then
       hs.osascript.applescriptFromFile("open-fb-home-chrome.applescript")
+    elseif app == "fb-bento" then
+      hs.osascript.applescriptFromFile("open-fb-bento-chrome.applescript")
     else
       hs.application.open(app)
     end
