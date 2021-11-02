@@ -9,13 +9,16 @@ local applicationHotkeys = {
   o = 'Microsoft Outlook',
   p = 'pomello',
   z = 'zoom.us',
-  s = 'VS Code @ FB',
+  s = 'Visual Studio Code',
+  -- s = 'VS Code @ FB',
   t = 'iTerm',
   x = 'translate-selection',
   y = 'Spotify',
-  w = 'fb-workplace',
-  v = 'fb-home',
+  w = 'fb-workplace-chat',
+  v = 'fb-cal',
   b = 'fb-bento',
+  h = 'fb-tasks',
+  g = 'fb-workplace-call',
   l = 'Bitwarden',
   r = 'hs-reload',
   e = 'hs-console'
@@ -29,12 +32,17 @@ for key, app in pairs(applicationHotkeys) do
       hs.toggleConsole()
     elseif app == "translate-selection" then
       spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
-    elseif app == "fb-workplace" then
-      hs.osascript.applescriptFromFile("open-fb-workplace-chrome.applescript")
-    elseif app == "fb-home" then
-      hs.osascript.applescriptFromFile("open-fb-home-chrome.applescript")
+    elseif app == "fb-workplace-chat" then
+      hs.osascript.applescriptFromFile("open-fb-workplace-chat-chrome.applescript")
+    elseif app == "fb-workplace-call" then
+      hs.osascript.applescriptFromFile("open-fb-group-call-chrome.applescript")
+    elseif app == "fb-cal" then
+      hs.osascript.applescriptFromFile("open-fb-calendar-chrome.applescript")
+    -- elseif app == "fb-tasks" then
+      -- hs.osascript.applescriptFromFile("open-fb-tasks-chrome.applescript")
     elseif app == "fb-bento" then
-      hs.osascript.applescriptFromFile("open-fb-bento-chrome.applescript")
+      -- hs.osascript.applescriptFromFile("open-fb-bento-chrome.applescript")
+      hs.osascript.applescriptFromFile("open-fb-daiquery-chrome.applescript")
     else
       hs.application.open(app)
     end

@@ -16,9 +16,9 @@ end
 --   send something else if no other keys are pressed.
 releasedF18 = function()
   hyper:exit()
-  -- if not hyper.triggered then
-  --   hs.eventtap.keyStroke({}, 'ESCAPE')
-  -- end
+  if not hyper.triggered then
+    hs.eventtap.keyStroke({}, 'ESCAPE')
+  end
 end
 
 -- Bind the Hyper key

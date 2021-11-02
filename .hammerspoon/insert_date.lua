@@ -2,6 +2,7 @@
 
 hyper:bind({"cmd"}, "t", function()
     local time = os.date("%Y-%m-%d")
-    hs.alert.show(time)
+    -- hs.alert.show(time)
+    hs.eventtap.keyStrokes(time, hs.application.frontmostApplication())
     hs.pasteboard.setContents(time)
 end)
