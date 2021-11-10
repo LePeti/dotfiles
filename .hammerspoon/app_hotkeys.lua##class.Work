@@ -1,50 +1,49 @@
 -- --------------------------------------
 -- Application hotkeys
 -- --------------------------------------
-
 local applicationHotkeys = {
-  a = "zettlr",
-  c = 'Google Chrome',
-  d = '/Applications/fman.app/Contents/MacOS/fman',
-  o = 'Microsoft Outlook',
-  p = 'pomello',
-  z = 'zoom.us',
-  s = 'Visual Studio Code',
-  -- s = 'VS Code @ FB',
-  t = 'iTerm',
-  x = 'translate-selection',
-  y = 'Spotify',
-  w = 'fb-workplace-chat',
-  v = 'fb-cal',
-  b = 'fb-bento',
-  h = 'fb-tasks',
-  g = 'fb-workplace-call',
-  l = 'Bitwarden',
-  r = 'hs-reload',
-  e = 'hs-console'
+    a = 'zettlr',
+    c = 'Google Chrome',
+    d = '/Applications/fman.app/Contents/MacOS/fman',
+    o = 'Microsoft Outlook',
+    z = 'zoom.us',
+    s = 'Visual Studio Code',
+    -- s = 'VS Code @ FB',
+    t = 'iTerm',
+    x = 'translate-selection',
+    y = 'Spotify',
+    w = 'Workplace Chat',
+    -- w = 'fb-workplace-chat',
+    v = 'fb-cal',
+    b = 'fb-bento',
+    -- h = 'fb-tasks', -- used for emojis currently
+    g = 'fb-workplace-call',
+    l = 'Bitwarden',
+    p = 'hs-reload',
+    r = 'messenger',
+    e = 'hs-console'
 }
 
 for key, app in pairs(applicationHotkeys) do
-  hyper:bind({}, key, function()
-    if app == "hs-reload" then
-      hs.reload()
-    elseif app == "hs-console" then
-      hs.toggleConsole()
-    elseif app == "translate-selection" then
-      spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
-    elseif app == "fb-workplace-chat" then
-      hs.osascript.applescriptFromFile("open-fb-workplace-chat-chrome.applescript")
-    elseif app == "fb-workplace-call" then
-      hs.osascript.applescriptFromFile("open-fb-group-call-chrome.applescript")
-    elseif app == "fb-cal" then
-      hs.osascript.applescriptFromFile("open-fb-calendar-chrome.applescript")
-    -- elseif app == "fb-tasks" then
-      -- hs.osascript.applescriptFromFile("open-fb-tasks-chrome.applescript")
-    elseif app == "fb-bento" then
-      -- hs.osascript.applescriptFromFile("open-fb-bento-chrome.applescript")
-      hs.osascript.applescriptFromFile("open-fb-daiquery-chrome.applescript")
-    else
-      hs.application.open(app)
-    end
-  end)
+    hyper:bind({}, key, function()
+        if app == 'hs-reload' then
+            hs.reload()
+        elseif app == 'hs-console' then
+            hs.toggleConsole()
+        elseif app == 'translate-selection' then
+            spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
+        elseif app == 'fb-workplace-chat' then
+            hs.osascript.applescriptFromFile('open-fb-workplace-chat-chrome.applescript')
+        elseif app == 'fb-workplace-call' then
+            hs.osascript.applescriptFromFile('open-fb-group-call-chrome.applescript')
+        elseif app == 'fb-cal' then
+            hs.osascript.applescriptFromFile('open-fb-calendar-chrome.applescript')
+        elseif app == 'fb-bento' then
+            hs.osascript.applescriptFromFile('open-fb-daiquery-chrome.applescript')
+        elseif app == 'messenger' then
+            hs.osascript.applescriptFromFile('open-messenger-chrome.applescript')
+        else
+            hs.application.open(app)
+        end
+    end)
 end
