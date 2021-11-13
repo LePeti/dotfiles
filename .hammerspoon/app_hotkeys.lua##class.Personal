@@ -1,35 +1,48 @@
 -- --------------------------------------
 -- Application hotkeys
 -- --------------------------------------
-
 local applicationHotkeys = {
-  a = 'zettlr',
-  c = 'Google Chrome',
-  -- c = 'Safari',
-  -- c = 'Firefox',
-  d = '/Applications/fman.app/Contents/MacOS/fman',
-  e = 'Steam',
-  p = 'Pomello',
-  r = 'Rstudio',
-  -- s = 'Sublime Text',
-  s = 'Visual Studio Code',
-  t = 'iTerm',
-  u = 'Preview',
-  v = 'Slack',
-  z = 'zoom.us',
-  -- v = 'VLC',
-  -- v = 'Visual Studio Code',
-  w = 'Trello',
-  y = 'Spotify',
-  l = 'bitwarden'
+    -- a = 'zettlr',
+    c = 'Google Chrome',
+    -- c = 'Safari',
+    -- c = 'Firefox',
+    d = '/Applications/fman.app/Contents/MacOS/fman',
+    -- e = 'Steam',
+    e = 'hs-console',
+    p = 'hs-reload',
+    -- p = 'Pomello',
+    -- r = 'Rstudio',
+    -- s = 'Sublime Text',
+    s = 'Visual Studio Code',
+    t = 'iTerm',
+    u = 'Preview',
+    -- v = 'Slack',
+    z = 'zoom.us',
+    -- v = 'VLC',
+    -- v = 'Visual Studio Code',
+    -- w = 'Trello',
+    r = 'messenger',
+    x = 'translate-selection',
+    y = 'Spotify',
+    l = 'bitwarden'
 }
 
 for key, app in pairs(applicationHotkeys) do
-  hyper:bind({}, key, function()
-    hs.application.launchOrFocus(app)
-  end)
+    hyper:bind({}, key, function()
+        if app == 'hs-reload' then
+            hs.reload()
+        elseif app == 'hs-console' then
+            hs.toggleConsole()
+        elseif app == 'messenger' then
+            hs.osascript.applescriptFromFile('open-messenger-chrome.applescript')
+        elseif app == 'translate-selection' then
+            spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
+        else
+            hs.application.launchOrFocus(app)
+        end
+    end)
 end
 
 hyper:bind({}, "q", function()
-  hs.caffeinate.startScreensaver()
+    hs.caffeinate.startScreensaver()
 end)

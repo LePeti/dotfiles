@@ -2,7 +2,7 @@
 -- Application hotkeys
 -- --------------------------------------
 local applicationHotkeys = {
-    a = 'zettlr',
+    -- a = 'zettlr',
     c = 'Google Chrome',
     d = '/Applications/fman.app/Contents/MacOS/fman',
     o = 'Microsoft Outlook',
