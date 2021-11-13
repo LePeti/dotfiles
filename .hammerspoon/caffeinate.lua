@@ -35,7 +35,7 @@ end)
 
 
 -- Lock
-
--- hyper:bind({}, "q", function()
---   hs.caffeinate.startScreensaver()
--- end)
+hyper:bind({}, "q", function()
+  hs.caffeinate.startScreensaver()
+  hs.audiodevice.defaultOutputDevice():setVolume(0)
+end)

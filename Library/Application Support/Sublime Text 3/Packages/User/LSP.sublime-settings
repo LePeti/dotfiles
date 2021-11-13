@@ -3,7 +3,8 @@
 	{
 		"rlang":
 		{
-			"enabled": true
+			"enabled": false,
+            "auto_show_diagnostics_panel": "never",
 		}
 	},
     "auto_show_diagnostics_panel": "never",

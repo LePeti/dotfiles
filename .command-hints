@@ -1,4 +1,4 @@
-### Terminal commands
+# Terminal commands
 
 ## Delete/find files/folders:
     find /srv/shiny-server/replenishment/releases -name "201711*"
@@ -6,10 +6,13 @@
     find /srv/shiny-server/replenishment/releases -name "201711*" -delete
 
 ## Find text in files
-    grep -rnw '/path/to/somewhere/' -e 'pattern'
+    grep -R --include="*.py" "text-pattern-to-search" /path/to/dir/where/to/search
 
 ## List files with their sizes:
     du -sh /srv/shiny-server/*
+
+## or as a tree
+    tree [-L #] /srv/shiny-server/* (-L defines the # of levels of depth to list)
 
 ## cat the most recent file (e.g. in shiny logs)
     cat "$(ls -rt | tail -1)"
@@ -24,16 +27,18 @@
 ## Search as you type and cycle through results:
     Ctrl + R
 
-### Query hds from terminal (etl01)
+# EMS query
+
+## Query hds from terminal (etl01)
     ssh etl01
     psql -U bigdata_ro -p 5432 -h 10.22.0.201 hds
     (provide password from db_config.yml)
 
-### Query suite from terminal (devmgmt1)
+## Query suite from terminal (devmgmt1)
     ssh devmgmt1
     database.sh suite0
 
-## ZSH aliases
+# ZSH aliases
     resolve alias by typing (e.g.) `type command-hints`
     zshconfig
     ems
@@ -42,8 +47,9 @@
     copyconfig
     rstudio
     crp
+    dip, dil (docker)
 
-## GIT
+# GIT
     Remove local commits and changes on disk too: `git reset --hard <last good SHA>`
     Do the above w/o `--hard` to remove commits but keep the changes on disk
     Undo public change: `git revert <SHA>` create a new commit that removes the previous changes
@@ -52,10 +58,16 @@
     Show diff from remote: `git fetch && get diff master origin/master`
     Merge conflict: Accept theirs/ours: `git checkout --ours/--theirs <path>`
 
-## Docker
-    docker image ls
-    docker run -it [docker-image-name:base] sh
+# Docker
+    docker ps (alias ~ dp)
+    docker image ls (alias ~ dil)
+    docker run -it [docker-image-name:tag] sh
     docker ps [-a]
+    docker image prune -f (alias ~ dip)
 
-## YADM
+# YADM
     yadm list -a
+    yadm add -u (add all changed files)
+
+# OS information
+    cat /etc/os-release
