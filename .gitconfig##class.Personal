@@ -18,22 +18,9 @@
     # add all (tracked/untracked) files and amend it into the last commit with the same message
     caa = !git add -A && git commit --amend --no-edit
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-[gpg]
-	program = gpg
 [commit]
 	gpgsign = false
 [core]
-	editor = subl -nw
-[merge]
-    tool = sublimerge
-[mergetool]
-    prompt = false
-[mergetool "sublimerge"]
-    cmd = subl -n --wait \"$LOCAL\" \"$MERGED\" \"$REMOTE\" \"$BASE\" --command \"sublimerge_diff_views\"
-    trustExitCode = false
-[diff]
-    tool = sublimerge
-[difftool]
-    prompt = false
-[difftool "sublimerge"]
-    cmd = subl -n --wait \"$LOCAL\" \"$REMOTE\" --command \"sublimerge_diff_views {\\\"left_read_only\\\": true, \\\"right_read_only\\\": false}\"
+	editor = code -n
+[pull]
+	rebase = false
