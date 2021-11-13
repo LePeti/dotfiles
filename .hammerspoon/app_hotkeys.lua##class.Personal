@@ -3,19 +3,25 @@
 -- --------------------------------------
 
 local applicationHotkeys = {
+  a = 'zettlr',
   c = 'Google Chrome',
+  -- c = 'Safari',
+  -- c = 'Firefox',
   d = '/Applications/fman.app/Contents/MacOS/fman',
   e = 'Steam',
   p = 'Pomello',
   r = 'Rstudio',
-  s = 'Sublime Text',
+  -- s = 'Sublime Text',
+  s = 'Visual Studio Code',
   t = 'iTerm',
   u = 'Preview',
   v = 'Slack',
+  z = 'zoom.us',
   -- v = 'VLC',
   -- v = 'Visual Studio Code',
   w = 'Trello',
-  y = 'Spotify'
+  y = 'Spotify',
+  l = 'bitwarden'
 }
 
 for key, app in pairs(applicationHotkeys) do

@@ -107,8 +107,8 @@ export ITERMPLOT=rv
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="subl ~/.zshrc"
-alias hotkeys="subl ~/.hammerspoon/app_hotkeys.lua"
+alias zshconfig="code ~/.zshrc"
+alias hotkeys="code ~/.hammerspoon"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # heroku autocomplete setup
@@ -118,3 +118,6 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/peterlukacs/Library/Caches/heroku/autocomplete/z
 
 # postgres env var
 export DATABASE_URL=postgres://$(whoami)
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
