@@ -56,17 +56,18 @@ ZSH_THEME="af-magic"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# pyenv
+# pyenv & pyenv-virtualenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+eval "$(pyenv virtualenv-init -)"
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/Envs
 export PROJECT_HOME=$HOME/Documents/repos
 source '/usr/local/bin/virtualenvwrapper.sh'
 
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
