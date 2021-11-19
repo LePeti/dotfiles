@@ -2,26 +2,32 @@
 -- Application hotkeys
 -- --------------------------------------
 local applicationHotkeys = {
-    -- a = 'zettlr',
+    a = 'todoist',
+    b = 'fb-bento',
     c = 'Google Chrome',
     d = '/Applications/fman.app/Contents/MacOS/fman',
+    e = 'hs-console',
+    -- f is full-screen mode
+    g = 'fb-workplace-call',
+    -- h is emojis -- h = 'fb-tasks', -- used for emojis currently
+    -- i is up arrow
+    -- j is left arrow
+    -- k is down arrow
+    -- l is right arrow -- l = 'Bitwarden',
+    -- m is move to netx screen
+    -- n
     o = 'Microsoft Outlook',
-    z = 'zoom.us',
-    s = 'Visual Studio Code',
-    -- s = 'VS Code @ FB',
+    p = 'hs-reload',
+    -- q
+    r = 'messenger',
+    s = 'Visual Studio Code', -- s = 'VS Code @ FB',
     t = 'iTerm',
+    -- u
+    v = 'fb-cal',
+    w = 'Workplace Chat', -- w = 'fb-workplace-chat',
     x = 'translate-selection',
     y = 'Spotify',
-    w = 'Workplace Chat',
-    -- w = 'fb-workplace-chat',
-    v = 'fb-cal',
-    b = 'fb-bento',
-    -- h = 'fb-tasks', -- used for emojis currently
-    g = 'fb-workplace-call',
-    -- l = 'Bitwarden',
-    p = 'hs-reload',
-    r = 'messenger',
-    e = 'hs-console'
+    z = 'zoom.us'
 }
 
 for key, app in pairs(applicationHotkeys) do
