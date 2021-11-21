@@ -3,12 +3,12 @@
 -- --------------------------------------
 local applicationHotkeys = {
     a = 'todoist',
-    b = 'fb-bento',
+    -- b is 'fb-bento',
     c = 'Google Chrome',
     d = '/Applications/fman.app/Contents/MacOS/fman',
-    e = 'hs-console',
+    -- e is 'hs-console',
     -- f is full-screen mode
-    g = 'fb-workplace-call',
+    -- g is 'fb-workplace-call',
     -- h is emojis -- h = 'fb-tasks', -- used for emojis currently
     -- i is up arrow
     -- j is left arrow
@@ -17,39 +17,21 @@ local applicationHotkeys = {
     -- m is move to netx screen
     -- n
     o = 'Microsoft Outlook',
-    p = 'hs-reload',
+    -- p is 'hs-reload',
     -- q
-    r = 'messenger',
+    -- r is 'messenger in chrome',
     s = 'Visual Studio Code', -- s = 'VS Code @ FB',
     t = 'iTerm',
     -- u
-    v = 'fb-cal',
-    w = 'Workplace Chat', -- w = 'fb-workplace-chat',
-    x = 'translate-selection',
+    -- v is 'fb calendar in chrome',
+    w = 'Workplace Chat',
+    -- x is 'translate selection',
     y = 'Spotify',
     z = 'zoom.us'
 }
 
 for key, app in pairs(applicationHotkeys) do
     hyper:bind({}, key, function()
-        if app == 'hs-reload' then
-            hs.reload()
-        elseif app == 'hs-console' then
-            hs.toggleConsole()
-        elseif app == 'translate-selection' then
-            spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
-        elseif app == 'fb-workplace-chat' then
-            hs.osascript.applescriptFromFile('open-fb-workplace-chat-chrome.applescript')
-        elseif app == 'fb-workplace-call' then
-            hs.osascript.applescriptFromFile('open-fb-group-call-chrome.applescript')
-        elseif app == 'fb-cal' then
-            hs.osascript.applescriptFromFile('open-fb-calendar-chrome.applescript')
-        elseif app == 'fb-bento' then
-            hs.osascript.applescriptFromFile('open-fb-daiquery-chrome.applescript')
-        elseif app == 'messenger' then
-            hs.osascript.applescriptFromFile('open-messenger-chrome.applescript')
-        else
-            hs.application.open(app)
-        end
+        hs.application.open(app)
     end)
 end

@@ -6,8 +6,19 @@ require('app_hotkeys')
 require('open_url')
 require('window_focus')
 require('insert_date')
+require('arrow_rebinds')
+require('chrome-tab-hotkeys')
 hs.loadSpoon('PopupTranslateSelection')
 hs.loadSpoon('Emojis')
+
+-- hammerspoon reload & console
+hyper:bind({}, 'p', function()
+    hs.reload()
+end)
+
+hyper:bind({}, 'e', function()
+    hs.toggleConsole()
+end)
 
 -- Set up Emoji picker hotkey
 hyper:bind({}, 'h', function()
@@ -18,23 +29,11 @@ end)
 spoon.Emojis:bindHotkeys({
     toggle = {{'ctrl', 'alt', 'cmd'}, 'h'}
 })
----
 
--- Rebind jkli to arrows
-arrowKey = function(arrow, modifiers)
-    local event = require("hs.eventtap").event
-    event.newKeyEvent(modifiers, string.lower(arrow), true):post()
-    event.newKeyEvent(modifiers, string.lower(arrow), false):post()
-  end
+-- translate selection
+hyper:bind({}, 'h', function()
+    spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
+end)
 
-  hyper:bind({}, 'j', function() arrowKey('LEFT', {}); end, nil, function() arrowKey('LEFT', {}); end)
-  hyper:bind({}, 'k', function() arrowKey('DOWN', {}); end, nil, function() arrowKey('DOWN', {}); end)
-  hyper:bind({}, 'i', function() arrowKey('UP', {}); end, nil, function() arrowKey('UP', {}); end)
-  hyper:bind({}, 'l', function() arrowKey('RIGHT', {}); end, nil, function() arrowKey('RIGHT', {}); end)
-  hyper:bind({'cmd'}, 'j', function() arrowKey('LEFT', {'cmd'}); end, nil, function() arrowKey('LEFT', {'cmd'}); end)
-  hyper:bind({'cmd'}, 'k', function() arrowKey('DOWN', {'cmd'}); end, nil, function() arrowKey('DOWN', {'cmd'}); end)
-  hyper:bind({'cmd'}, 'l', function() arrowKey('RIGHT', {'cmd'}); end, nil, function() arrowKey('RIGHT', {'cmd'}); end)
-  hyper:bind({'cmd'}, 'i', function() arrowKey('UP', {'cmd'}); end, nil, function() arrowKey('UP', {'cmd'}); end)
-
-
+-- HS loaded notification
 hs.alert.show('Config loaded')
