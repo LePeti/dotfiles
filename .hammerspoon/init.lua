@@ -31,7 +31,7 @@ spoon.Emojis:bindHotkeys({
 })
 
 -- translate selection
-hyper:bind({}, 'h', function()
+hyper:bind({}, 'x', function()
     spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
 end)
 
