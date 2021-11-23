@@ -17,7 +17,7 @@ end
 releasedF18 = function()
   hyper:exit()
   if not hyper.triggered then
-    hs.eventtap.keyStroke({}, 'ESCAPE')
+    -- hs.eventtap.keyStroke({}, 'ESCAPE')
   end
 end
 
