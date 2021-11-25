@@ -29,3 +29,7 @@ hyper:bind({'option', 'shift'}, 'j', function() arrowKey('LEFT', {'option', 'shi
 hyper:bind({'option', 'shift'}, 'k', function() arrowKey('DOWN', {'option', 'shift'}); end, nil, function() arrowKey('DOWN', {'option', 'shift'}); end)
 hyper:bind({'option', 'shift'}, 'l', function() arrowKey('RIGHT', {'option', 'shift'}); end, nil, function() arrowKey('RIGHT', {'option', 'shift'}); end)
 hyper:bind({'option', 'shift'}, 'i', function() arrowKey('UP', {'option', 'shift'}); end, nil, function() arrowKey('UP', {'option', 'shift'}); end)
+hyper:bind({'option', 'cmd'}, 'j', function() arrowKey('LEFT', {'option', 'cmd'}); end, nil, function() arrowKey('LEFT', {'option', 'cmd'}); end)
+hyper:bind({'option', 'cmd'}, 'k', function() arrowKey('DOWN', {'option', 'cmd'}); end, nil, function() arrowKey('DOWN', {'option', 'cmd'}); end)
+hyper:bind({'option', 'cmd'}, 'l', function() arrowKey('RIGHT', {'option', 'cmd'}); end, nil, function() arrowKey('RIGHT', {'option', 'cmd'}); end)
+hyper:bind({'option', 'cmd'}, 'i', function() arrowKey('UP', {'option', 'cmd'}); end, nil, function() arrowKey('UP', {'option', 'cmd'}); end)
