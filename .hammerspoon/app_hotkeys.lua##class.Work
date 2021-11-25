@@ -15,7 +15,7 @@ local applicationHotkeys = {
     -- k is down arrow
     -- l is right arrow -- l = 'Bitwarden',
     -- m is move to netx screen
-    -- n
+    -- n is printing audio output on screen
     o = 'Microsoft Outlook',
     -- p is 'hs-reload',
     -- q -- lock comp

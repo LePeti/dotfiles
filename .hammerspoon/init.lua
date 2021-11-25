@@ -42,5 +42,9 @@ hyper:bind({}, "q", function()
     hs.audiodevice.defaultOutputDevice():setVolume(0)
 end)
 
+hyper:bind({}, 'n', function()
+    hs.alert.show(hs.audiodevice.current().name)
+end)
+
 -- HS loaded notification
 hs.alert.show('Config loaded')
