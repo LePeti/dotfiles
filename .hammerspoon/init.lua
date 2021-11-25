@@ -35,5 +35,12 @@ hyper:bind({}, 'x', function()
     spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')
 end)
 
+-- Lock
+hyper:bind({}, "q", function()
+    hs.caffeinate.startScreensaver()
+    hs.spotify.pause()
+    hs.audiodevice.defaultOutputDevice():setVolume(0)
+end)
+
 -- HS loaded notification
 hs.alert.show('Config loaded')

@@ -18,7 +18,7 @@ local applicationHotkeys = {
     -- n
     o = 'Microsoft Outlook',
     -- p is 'hs-reload',
-    -- q
+    -- q -- lock comp
     -- r is 'messenger in chrome',
     s = 'Visual Studio Code', -- s = 'VS Code @ FB',
     t = 'iTerm',

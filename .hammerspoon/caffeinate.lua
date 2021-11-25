@@ -32,10 +32,3 @@ end
 hyper:bind({}, "1", function()
     toggleCaffeine()
 end)
-
-
--- Lock
-hyper:bind({}, "q", function()
-  hs.caffeinate.startScreensaver()
-  hs.audiodevice.defaultOutputDevice():setVolume(0)
-end)
