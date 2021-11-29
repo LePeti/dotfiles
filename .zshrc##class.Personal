@@ -122,3 +122,6 @@ export DATABASE_URL=postgres://$(whoami)
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# disable Chrome's two/three finger 'go back/forward' navigation
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
