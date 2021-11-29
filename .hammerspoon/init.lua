@@ -8,6 +8,7 @@ require('window_focus')
 require('insert_date')
 require('arrow_rebinds')
 require('chrome-tab-hotkeys')
+require('sound_output_device_change_notif')
 hs.loadSpoon('PopupTranslateSelection')
 hs.loadSpoon('Emojis')
 
