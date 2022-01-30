@@ -7,8 +7,12 @@ hyper:bind({}, 'v', function()
 end)
 
 hyper:bind({}, 'b', function()
-    hs.osascript.applescriptFromFile('open-fb-daiquery-chrome.applescript')
+    hs.osascript.applescriptFromFile('open-fb-bento-chrome.applescript')
 end)
+
+-- hyper:bind({}, 'b', function()
+--     hs.osascript.applescriptFromFile('open-fb-daiquery-chrome.applescript')
+-- end)
 
 hyper:bind({}, 'r', function()
     hs.osascript.applescriptFromFile('open-messenger-chrome.applescript')
