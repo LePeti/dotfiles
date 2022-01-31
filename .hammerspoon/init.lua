@@ -44,8 +44,8 @@ hyper:bind({}, "q", function()
 end)
 
 hyper:bind({}, 'n', function()
-    hs.alert.show("Output: " .. hs.audiodevice.current().name .. "\n" .. "Input: " ..
-                      hs.audiodevice.defaultInputDevice():name())
+    hs.alert.show("Input:      " .. hs.audiodevice.defaultInputDevice():name() .. "\n" .. "Output:  " ..
+                      hs.audiodevice.current().name)
 end)
 
 -- HS loaded notification
