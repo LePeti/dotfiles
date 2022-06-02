@@ -44,3 +44,17 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/peterlukacs/Library/Caches/heroku/autocomplete/z
 
 # disable Chrome's two/three finger 'go back/forward' navigation
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+# countdown timer (cdt)
+function cdt(){
+    local now=$(date +%s)
+    local end=$((now + $1))
+    while (( now < end)); do
+        printf "%s\r" "$(date -u -j -f %s $((end - now)) +%T)"
+        sleep 0.25
+        now=$(date +%s)
+    done
+    printf "%s\r" "$(date -u -j -f %s $((end - now)) +%T)"
+    echo
+    echo -en "\a"
+}

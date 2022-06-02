@@ -20,7 +20,8 @@ local applicationHotkeys = {
     -- p is 'hs-reload',
     -- q -- lock comp
     -- r is 'messenger in chrome',
-    s = 'Visual Studio Code', -- s = 'VS Code @ FB',
+    s = 'Visual Studio Code',
+    -- s = 'VS Code @ FB',
     t = 'iTerm',
     -- u
     -- v is 'fb calendar in chrome',

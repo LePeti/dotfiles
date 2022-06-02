@@ -1,9 +1,9 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Peter Lukacs
-	email = lukacs.peter.andras@gmail.com
+    name = Peter Lukacs
+    email = lukacs.peter.andras@gmail.com
 [alias]
-	co = checkout
+    co = checkout
     st = status
     # commit added files with message
     cm = !git commit -m
@@ -19,6 +19,14 @@
     caa = !git add -A && git commit --amend --no-edit
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
-	editor = code -n
+    editor = code --wait
 [pull]
-	rebase = false
+    rebase = false
+[merge]
+      tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
