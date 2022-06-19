@@ -17,4 +17,4 @@ to openUrlInChrome(URL_)
     end tell
 end openUrlInChrome
 
-openUrlInChrome("https://www.internalfb.com/intern/anp")
+openUrlInChrome("https://www.messenger.com/")
