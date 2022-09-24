@@ -22,9 +22,9 @@ local applicationHotkeys = {
     -- r is 'messenger in chrome',
     s = 'Visual Studio Code', -- s = 'VS Code @ FB',
     t = 'iTerm',
-    -- u
+    -- u,
     -- v,
-    -- w
+    w = 'WhatsApp',
     -- x is 'translate selection',
     y = 'Spotify',
     z = 'zoom.us'

@@ -31,6 +31,12 @@ spoon.Emojis:bindHotkeys({
     toggle = {{'ctrl', 'alt', 'cmd'}, 'h'}
 })
 
+hyper:bind({}, 'a', function()
+    hs.eventtap.keyStroke({'cmd', 'shift'}, 'm')
+    hs.eventtap.keyStroke({}, 'return')
+    hyper.triggered = true
+end)
+
 -- translate selection
 hyper:bind({}, 'x', function()
     spoon.PopupTranslateSelection:translateSelectionPopup('hungarian', 'english')

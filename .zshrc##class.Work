@@ -1,6 +1,6 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # Don't change the below 3 rows order...
-export ZSH=/Users/peterlucas/.oh-my-zsh
+export ZSH=/Users/peterlukacs/.oh-my-zsh
 ZSH_THEME="af-magic"
 source $ZSH/oh-my-zsh.sh
 
@@ -14,7 +14,7 @@ plugins=(
 
 # Aliases
 alias zshconfig="code ~/.zshrc"
-alias hotkeys="code /Users/peterlucas/.hammerspoon/"
+alias hotkeys="code /Users/peterlukacs/.hammerspoon/"
 alias command-hints="cat ~/.command-hints"
 alias dil='docker image ls'
 alias dip='docker image prune -f'
