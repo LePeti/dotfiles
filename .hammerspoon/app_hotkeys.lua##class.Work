@@ -8,7 +8,7 @@ local applicationHotkeys = {
     d = '/Applications/fman.app/Contents/MacOS/fman',
     -- e is 'hs-console',
     -- f is full-screen mode
-    -- g
+    -- g is for calendar in chrome
     -- h is emojis
     -- i is up arrow
     -- j is left arrow
