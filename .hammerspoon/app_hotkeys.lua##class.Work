@@ -3,7 +3,7 @@
 -- --------------------------------------
 local applicationHotkeys = {
     -- a is "cmd + shift + m" then "enter" which switches profiles in Chrome
-    -- b
+    b = 'Bitwarden',
     c = 'Google Chrome',
     d = '/Applications/fman.app/Contents/MacOS/fman',
     -- e is 'hs-console',
