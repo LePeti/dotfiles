@@ -3,7 +3,7 @@
 -- --------------------------------------
 
 local UrlHotkeys = {
-  ["2"] = 'https://google.com',
+  -- ["2"] = 'https://google.com',
   -- ["3"] = 'https://git.emarsys.net/',
   -- ["4"] = 'https://github.com/emartech',
   -- ["5"] = 'https://console.cloud.google.com/home/dashboard?project=ems-data-playground',

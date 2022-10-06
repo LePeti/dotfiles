@@ -16,12 +16,13 @@ plugins=(
 alias zshconfig="code ~/.zshrc"
 alias hotkeys="code /Users/peterlukacs/.hammerspoon/"
 alias command-hints="cat ~/.command-hints"
+alias restart-shell="zsh -l"
 alias dil='docker image ls'
 alias dip='docker image prune -f'
 alias dp='docker ps'
 
 # Komoot
-alias kmt-sso="aws sso login; ssh -L 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -N"
+alias kmt-sso="aws sso login; ssh -L 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -N  ServerAliveInterval=3600"
 
 # pyenv for python version management
 export PYENV_ROOT="$HOME/.pyenv"
