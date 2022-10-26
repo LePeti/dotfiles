@@ -57,6 +57,7 @@
     Show log of changes to HEAD: `git reflog`
     Show diff from remote: `git fetch && get diff master origin/master`
     Merge conflict: Accept theirs/ours: `git checkout --ours/--theirs <path>`
+    Merge a single file from an other branch: `git checkout <source-branch-name> <path-to-file>`
 
 # Docker
     docker ps (alias ~ dp)
