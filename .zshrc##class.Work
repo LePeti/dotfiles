@@ -22,7 +22,7 @@ alias dip='docker image prune -f'
 alias dp='docker ps'
 
 # Komoot
-alias kmt-sso="aws sso login; ssh -L 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -N  ServerAliveInterval=3600"
+alias kmt-sso="aws sso login; ssh -L 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -N ServerAliveInterval=60"
 
 # pyenv for python version management
 export PYENV_ROOT="$HOME/.pyenv"
