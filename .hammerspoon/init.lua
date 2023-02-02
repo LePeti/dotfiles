@@ -66,5 +66,10 @@ hyper:bind({}, 'n', function()
     -- hs.eventtap.keystrokes("asd")
 end)
 
+-- paste shrug ¯\_(ツ)_/¯
+hs.hotkey.bind({'cmd', 'ctrl', 'option'}, 's', function()
+    hs.eventtap.keyStrokes("¯\\_(ツ)_/¯")
+end)
+
 -- HS loaded notification
 hs.alert.show('Config loaded')
