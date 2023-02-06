@@ -59,12 +59,12 @@ hyper:bind({}, 'n', function()
 end)
 
 -- open aws tunnel
-hyper:bind({}, 'n', function()
+-- hyper:bind({}, 'n', function()
     -- the below doesn't work. also, using hs.task shouldn't be used for never exiting tasks
     -- hs.execute("aws sso login; ssh -l 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -n serveraliveinterval=60")
     -- hs.application.launchorfocus('iterm')
     -- hs.eventtap.keystrokes("asd")
-end)
+-- end)
 
 -- paste shrug ¯\_(ツ)_/¯
 hs.hotkey.bind({'cmd', 'ctrl', 'option'}, 's', function()
