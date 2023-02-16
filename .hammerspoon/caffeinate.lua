@@ -29,6 +29,12 @@ if caffeine then
     updateCaffeineDisplay(hs.caffeinate.get("displayIdle"))
 end
 
+-- the below sets the behavior when hammerspoon loads
+-- 'true' means caffeinate is enabled
+hs.caffeinate.set("displayIdle", true)
+caffeine:setIcon("caffeine-active.png")
+hs.alert("Caffeine enabled", 1)
+
 hyper:bind({}, "1", function()
     toggleCaffeine()
 end)
