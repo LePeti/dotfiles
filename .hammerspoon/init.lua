@@ -32,7 +32,7 @@ spoon.Emojis:bindHotkeys({
     toggle = {{'ctrl', 'alt', 'cmd'}, 'h'}
 })
 
--- bind 'a' as cmd + shift + m --> switch user in chrome
+-- bind hyper + 'a' as cmd + shift + m --> switch user in chrome
 hyper:bind({}, 'a', function()
     hs.eventtap.keyStroke({'cmd', 'shift'}, 'm')
     hs.eventtap.keyStroke({}, 'return')
