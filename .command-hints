@@ -52,12 +52,15 @@
 # GIT
     Remove local commits and changes on disk too: `git reset --hard <last good SHA>`
     Do the above w/o `--hard` to remove commits but keep the changes on disk
-    Undo public change: `git revert <SHA>` create a new commit that removes the previous changes
+    Undo public change: `git revert <SHA>` creates a new commit that removes the previous changes
     Undo uncommited local changes: git checkout <bad filename>
     Show log of changes to HEAD: `git reflog`
-    Show diff from remote: `git fetch && get diff master origin/master`
+    Show diff from remote (two way diff): `git fetch && get diff master origin/master`
+        One way diff: `git fetch && get diff master...origin/master`
     Merge conflict: Accept theirs/ours: `git checkout --ours/--theirs <path>`
     Merge a single file from an other branch: `git checkout <source-branch-name> <path-to-file>`
+    Merge master to your branch. On your branch: `git merge master`
+    Delete, squash, reorder commits interactively: git rebase -i HEAD~12
 
 # Docker
     docker ps (alias ~ dp)
