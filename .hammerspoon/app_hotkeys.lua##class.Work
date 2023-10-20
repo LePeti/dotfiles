@@ -6,7 +6,7 @@ local applicationHotkeys = {
     b = 'Bitwarden',
     c = 'Google Chrome',
     d = '/Applications/fman.app/Contents/MacOS/fman',
-    -- e is 'hs-console',
+    e = 'datagrip',
     -- f is full-screen mode
     -- g is for calendar in chrome
     -- h is emojis
