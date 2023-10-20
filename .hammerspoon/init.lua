@@ -18,9 +18,9 @@ hyper:bind({}, 'p', function()
 end)
 
 -- Open hammerspoon console
-hyper:bind({}, 'e', function()
-    hs.toggleConsole()
-end)
+-- hyper:bind({}, 'e', function()
+--     hs.toggleConsole()
+-- end)
 
 -- Set up Emoji picker hotkey
 hyper:bind({}, 'h', function()
@@ -69,6 +69,11 @@ end)
 -- paste shrug ¯\_(ツ)_/¯
 hs.hotkey.bind({'cmd', 'ctrl', 'option'}, 's', function()
     hs.eventtap.keyStrokes("¯\\_(ツ)_/¯")
+end)
+
+-- paste shrug my email address
+hs.hotkey.bind({'cmd', 'ctrl', 'option'}, 'e', function()
+    hs.eventtap.keyStrokes("lukacs.peter.andras@gmail.com")
 end)
 
 -- HS loaded notification
