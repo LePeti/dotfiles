@@ -22,7 +22,7 @@ local applicationHotkeys = {
     -- r is 'messenger in chrome',
     s = 'Visual Studio Code',
     t = 'iTerm',
-    u = 'Trello',
+    -- u = 'Trello',
     v = 'Slack',
     w = 'WhatsApp',
     -- x is 'translate selection',
