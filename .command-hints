@@ -61,6 +61,7 @@
     Merge a single file from an other branch: `git checkout <source-branch-name> <path-to-file>`
     Merge master to your branch. On your branch: `git merge master`
     Delete, squash, reorder commits interactively: git rebase -i HEAD~12
+    Set upstream automatically to 'origin': git config --global push.autoSetupRemote true
 
 # Docker
     docker ps (alias ~ dp)
