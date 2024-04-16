@@ -15,7 +15,7 @@ plugins=(
 # Aliases
 alias zshconfig="code ~/.zshrc"
 alias hotkeys="code /Users/peterlukacs/.hammerspoon/"
-alias command-hints="cat ~/.command-hints"
+alias command-hints="cat ~/.command-hints.md"
 alias restart-shell="zsh -l"
 alias dil='docker image ls'
 alias dip='docker image prune -f'
