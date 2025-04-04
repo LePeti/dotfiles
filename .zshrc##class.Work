@@ -22,7 +22,21 @@ alias dip='docker image prune -f'
 alias dp='docker ps'
 
 # Komoot
-alias tunnel='local expiration_time=$(find ~/.aws/sso/cache/ -type f -name "*.json" -exec grep -q '"accessToken"' {} \; -exec grep -q '"expiresAt"' {} \; -exec jq -r '.expiresAt' {} + | sort -r | head -n 1); if [ -z "$expiration_time" ] || [ "$(date -j -u -f "%Y-%m-%dT%H:%M:%SZ" +%s "$expiration_time")" -lt "$(date +%s)" ]; then aws sso login; fi; ssh -L 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -N -o ServerAliveInterval=60'
+tunnel() {
+    # Find the JSON file with the furthest expiration time, that contains both the expiresAt and the accessToken keys
+    local expiration_time=$(find ~/.aws/sso/cache/ -type f -name "*.json" -exec grep -q '"accessToken"' {} \; -exec grep -q '"expiresAt"' {} \; -exec jq -r '.expiresAt' {} + | sort -r | head -n 1)
+
+    echo 'sso login will expire at' $(echo $expiration_time)
+
+    # Authenticate with AWS: run AWS SSO login if no expiration time was found or if the latest one is in the past
+    if [ -z "$expiration_time" ] || [ "$(date -j -u -f "%Y-%m-%dT%H:%M:%SZ" "$expiration_time" +%s)" -lt "$(date +%s)" ]; then
+        aws sso login --profile komoot-analytics:ops
+    fi
+
+  # establish the SSH tunnel
+    ~/aws-ssh-tunnel.sh --profile komoot-analytics:ops 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439
+}
+
 # pyenv for python version management
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -50,6 +64,10 @@ function cdt(){
     echo
     echo -en "\a"
 }
+
+# Google cloud SDK (gcloud cli)
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/peterlukacs/.rd/bin:$PATH"

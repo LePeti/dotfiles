@@ -19,6 +19,9 @@
     caa = !git add -A && git commit --amend --no-edit
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     com = !git checkout master
+    cmp = !git git checkout master && git pull
+    cmpn = !git checkout master && git pull && git checkout -b
+    # cmpn = !git show-ref --verify --quiet refs/heads/master && git checkout master && git pull && git checkout -b || git show-ref --verify --quiet refs/heads/main && git checkout main && git pull && git checkout -b
 [core]
     editor = code --wait
 [pull]
