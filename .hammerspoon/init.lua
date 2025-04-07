@@ -9,28 +9,15 @@ require('insert_date')
 require('arrow_rebinds')
 require('chrome-tab-hotkeys')
 require('sound_output_device_change_notif')
-hs.loadSpoon('PopupTranslateSelection')
-hs.loadSpoon('Emojis')
+
+hs.loadSpoon("SpoonInstall")
+
+spoon.SpoonInstall:andUse("PopupTranslateSelection")
 
 -- reload hammerspoon
 hyper:bind({}, 'p', function()
     hs.reload()
 end)
-
--- Open hammerspoon console
--- hyper:bind({}, 'e', function()
---     hs.toggleConsole()
--- end)
-
--- Set up Emoji picker hotkey
-hyper:bind({}, 'h', function()
-    hs.eventtap.keyStroke({'cmd', 'alt', 'ctrl'}, 'h')
-    hyper.triggered = true
-end)
-
-spoon.Emojis:bindHotkeys({
-    toggle = {{'ctrl', 'alt', 'cmd'}, 'h'}
-})
 
 -- bind hyper + 'a' as cmd + shift + m --> switch user in chrome
 hyper:bind({}, 'a', function()
@@ -48,7 +35,7 @@ end)
 hyper:bind({}, "q", function()
     hs.caffeinate.startScreensaver()
     hs.spotify.pause()
-    hs.audiodevice.defaultOutputDevice():setVolume(0)
+    -- hs.audiodevice.defaultOutputDevice():setVolume(0)
 end)
 
 
@@ -58,22 +45,14 @@ hyper:bind({}, 'n', function()
                       hs.audiodevice.current().name)
 end)
 
--- open aws tunnel
--- hyper:bind({}, 'n', function()
-    -- the below doesn't work. also, using hs.task shouldn't be used for never exiting tasks
-    -- hs.execute("aws sso login; ssh -l 5439:main.ci6pf3wvc9tf.eu-west-1.redshift.amazonaws.com:5439 komoot-analytics-ssh-jump-host -n serveraliveinterval=60")
-    -- hs.application.launchorfocus('iterm')
-    -- hs.eventtap.keystrokes("asd")
--- end)
-
 -- paste shrug ¯\_(ツ)_/¯
-hs.hotkey.bind({'cmd', 'ctrl', 'option'}, 's', function()
-    hs.eventtap.keyStrokes("¯\\_(ツ)_/¯")
+hyper:bind({"cmd"}, "s", function()
+    hs.eventtap.keyStrokes("¯\\_(ツ)_/¯", hs.application.frontmostApplication())
 end)
 
--- paste shrug my email address
-hs.hotkey.bind({'cmd', 'ctrl', 'option'}, 'e', function()
-    hs.eventtap.keyStrokes("lukacs.peter.andras@gmail.com")
+-- paste my email address
+hyper:bind({"cmd"}, "e", function()
+    hs.eventtap.keyStrokes("lukacs.peter.andras@gmail.com", hs.application.frontmostApplication())
 end)
 
 -- HS loaded notification

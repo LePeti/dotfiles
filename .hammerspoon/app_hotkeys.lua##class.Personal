@@ -2,32 +2,33 @@
 -- Application hotkeys
 -- --------------------------------------
 local applicationHotkeys = {
-    a = 'todoist',
-    -- b,
+    -- a is "cmd + shift + m" then "enter" which switches profiles in Chrome
+    b = 'Bitwarden',
     c = 'Google Chrome',
     d = '/Applications/fman.app/Contents/MacOS/fman',
-    -- e is 'hs-console',
+    -- e = '',
     -- f is full-screen mode
     -- g is for calendar in chrome
-    -- h is emojis -- h = 'fb-tasks', -- used for emojis currently
+    -- h is emojis
     -- i is up arrow
     -- j is left arrow
     -- k is down arrow
     -- l is right arrow -- l = 'Bitwarden',
-    -- m is move to netx screen
+    -- m is move to next screen
     -- n is printing audio output on screen
     o = 'Microsoft Outlook',
     -- p is 'hs-reload',
-    -- q -- lock comp
+    -- q is lock compupter
     -- r is 'messenger in chrome',
-    s = 'Visual Studio Code', -- s = 'VS Code @ FB',
+    s = 'Visual Studio Code',
     t = 'iTerm',
-    -- u,
-    -- v,
+    u = 'chatGPT',
+    v = 'Discord',
     w = 'WhatsApp',
     -- x is 'translate selection',
     y = 'Spotify',
-    z = 'zoom.us'
+    z = 'zoom.us',
+    ["2"] = 'Flow'
 }
 
 for key, app in pairs(applicationHotkeys) do
