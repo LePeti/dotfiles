@@ -2,16 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/peterlukacs/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
-
 source $ZSH/oh-my-zsh.sh
+
+# enable zsh-completions
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+plugins=(
+    zsh-completions
+    autojump
+)
+
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
@@ -23,10 +26,16 @@ export ITERMPLOT=rv
 
 # Aliases
 alias zshconfig="code ~/.zshrc"
-alias hotkeys="code ~/.hammerspoon"
+alias hotkeys="code /Users/peterlukacs/.hammerspoon/"
+alias command-hints="cat ~/.command-hints.md"
+alias restart-shell="zsh -l"
+alias dil='docker image ls'
+alias dip='docker image prune -f'
+alias dp='docker ps'
 
 # autojump
 [ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
+
 # disable Chrome's two/three finger 'go back/forward' navigation
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
