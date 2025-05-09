@@ -11,12 +11,6 @@ export ZSH=/Users/peterlukacs/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
 
-# pyenv for python version management
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init --path &>/dev/null)"
-
 source $ZSH/oh-my-zsh.sh
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
@@ -31,17 +25,8 @@ export ITERMPLOT=rv
 alias zshconfig="code ~/.zshrc"
 alias hotkeys="code ~/.hammerspoon"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/peterlukacs/Library/Caches/heroku/autocomplete/zsh_setup && \
-    test -f $HEROKU_AC_ZSH_SETUP_PATH && \
-    source $HEROKU_AC_ZSH_SETUP_PATH;
-
-# postgres env var
-# export DATABASE_URL=postgres://$(whoami)
-
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
+[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 # disable Chrome's two/three finger 'go back/forward' navigation
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
